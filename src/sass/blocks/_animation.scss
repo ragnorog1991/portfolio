@@ -17,18 +17,6 @@
   animation-range: 20% 50%;
 }
 
-@keyframes fade-in {
-  from {
-    -webkit-transform: translate(-25vw);
-    transform: translate(-25vw);
-    opacity: 0;
-  }
-}
-.my-photo {
-  animation-name: fade-in;
-  -webkit-animation-name: fade-in;
-}
-
 @keyframes shake {
   0% {
     transform: translate(3px, 0);
