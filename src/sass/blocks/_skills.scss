@@ -1,125 +1,123 @@
 .skills {
-    padding-top: 120px;
+  padding-top: 120px;
 
-    &__title {
+  &__title {
+    position: relative;
+    text-align: center;
+    @include before_circle;
+
+    &:before {
+      top: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__subtitle {
+    text-align: center;
+  }
+
+  &__wrapper {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    padding: 62px 10px 120px 10px;
+    grid-template-columns: repeat(4, 270px);
+    grid-template-rows: repeat(2, 270px);
+    column-gap: 13px;
+    row-gap: 13px;
+
+    &-elem {
+      display: grid;
+      width: 270px;
+      height: 270px;
+      justify-content: center;
+      vertical-align: middle;
+      box-sizing: border-box;
+      border: 1px solid rgb(0, 0, 0);
+      background: rgba(196, 196, 196, 0);
+
+      img {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &__body {
+    font-size: 12px;
+    line-height: 18px;
+
+    &-wrapper {
+      width: 211px;
+      height: 94px;
+    }
+  }
+
+  &__text {
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+  }
+
+  .jquery {
+    margin-top: 45px;
+  }
+
+  .mongo {
+    margin-top: 38px;
+  }
+
+  &__progress {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    grid-template-rows: repeat(2, 70px);
+    column-gap: 45px;
+    row-gap: 30px;
+
+    &-item {
+      position: relative;
+      width: 350px;
+      height: 70px;
+
+      &-text {
         position: relative;
-        text-align: center;
-        @include before_circle;
-
-        &:before {
-            top: -6px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    }
-
-    &__subtitle {
-        text-align: center;
-    }
-
-    &__wrapper {
-        display: grid;
-        padding: 62px 10px 120px 10px;
-        grid-template-columns: repeat(4, 270px);
-        grid-template-rows: repeat(2, 270px);
-        column-gap: 13px;
-        row-gap: 13px;
-
-        &-elem {
-            display: grid;
-            width: 270px;
-            height: 270px;
-            justify-content: center;
-            vertical-align: middle;
-            box-sizing: border-box;
-            border: 1px solid rgb(0, 0, 0);
-            background: rgba(196, 196, 196, 0);
-
-            img {
-                margin-top: 30px;
-            }
-        }
-    }
-
-    &__body {
-        font-size: 12px;
-        line-height: 18px;
-
-
-        &-wrapper {
-            width: 211px;
-            height: 94px;
-        }
-    }
-
-    &__text {
-        margin-top: 20px;
+        left: 13px;
         font-size: 14px;
         font-weight: 700;
         line-height: 21px;
-    }
+        @include before_circle;
 
-    .jquery {
-        margin-top: 45px;
-    }
-
-    .mongo {
-        margin-top: 38px;
-    }
-
-    &__progress {
-        display: grid;
-        grid-template-columns: repeat(3, 350px);
-        grid-template-rows: repeat(2, 70px);
-        column-gap: 45px;
-        row-gap: 30px;
-
-
-        &-item {
-            position: relative;
-            width: 350px;
-            height: 70px;
-
-            &-text {
-                position: relative;
-                left: 13px;
-                font-size: 14px;
-                font-weight: 700;
-                line-height: 21px;
-                @include before_circle;
-
-                &:before {
-                    top: -6px;
-                    left: -13px;
-                }
-            }
-
-            &-subtext {
-                display: block;
-                position: relative;
-                max-width: 35px;
-                font-size: 14px;
-                line-height: 21px;
-                top: -20px;
-                left: 90%;
-            }
-
+        &:before {
+          top: -6px;
+          left: -13px;
         }
+      }
 
-        &-line {
-            width: 350px;
-            height: 14px;
-            background-color: #E8E4DE;
-            border-radius: 4px;
-            grid-column: 1 / 3;
-
-            span {
-                display: block;
-                height: 100%;
-                background-color: $main-color;
-                border-radius: 4px;
-            }
-        }
+      &-subtext {
+        display: block;
+        position: relative;
+        max-width: 35px;
+        font-size: 14px;
+        line-height: 21px;
+        top: -20px;
+        left: 90%;
+      }
     }
 
+    &-line {
+      width: 350px;
+      height: 14px;
+      background-color: #e8e4de;
+      border-radius: 4px;
+      grid-column: 1 / 3;
+
+      span {
+        display: block;
+        height: 100%;
+        background-color: $main-color;
+        border-radius: 4px;
+      }
+    }
+  }
 }

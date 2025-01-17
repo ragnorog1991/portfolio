@@ -29,21 +29,20 @@
   -webkit-animation-name: fade-in;
 }
 
-// .skills__wrapper {
-//   position: relative;
-//   overflow: hidden;
-// }
-
-// .skills__wrapper-elem {
-//   position: absolute;
-//   left: -100px; /* Начальная позиция за пределами экрана */
-//   opacity: 0; /* Начальная непрозрачность */
-//   transform: rotate(0deg); /* Начальное вращение */
-//   transition: transform 0.5s ease, opacity 0.5s ease; /* Плавный переход */
-// }
-
-// .visible {
-//   left: 50%; /* Позиция по центру экрана */
-//   opacity: 1; /* Полная непрозрачность */
-//   transform: rotate(360deg); /* Вращение на 360 градусов */
-// }
+@keyframes shake {
+  0% {
+    transform: translate(3px, 0);
+  }
+  25% {
+    transform: translate(-3px, 0);
+  }
+  50% {
+    transform: translate(3px, 0);
+  }
+  75% {
+    transform: translate(-3px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
