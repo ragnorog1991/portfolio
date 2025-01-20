@@ -16,3 +16,26 @@ const counters = document.querySelectorAll(".skills__progress-item-subtext"),
 counters.forEach((item, i) => {
   lines[i].style.width = item.innerHTML;
 });
+
+// Получаем кнопку
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// Показываем кнопку при прокрутке вниз
+window.onscroll = function () {
+  if (
+    document.body.scrollTop > 100 ||
+    document.documentElement.scrollTop > 100
+  ) {
+    scrollToTopBtn.style.display = "block";
+  } else {
+    scrollToTopBtn.style.display = "none";
+  }
+};
+
+// Функция для плавной прокрутки к верху
+scrollToTopBtn.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Плавная прокрутка
+  });
+});
