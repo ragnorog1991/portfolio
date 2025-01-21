@@ -768,7 +768,12 @@
               Или оставьте ваши данные и я сам вам напишу:
             </div>
 
-            <form action="#" class="contacts__form">
+            <form
+              id="contactForm"
+              class="contacts__form"
+              action="https://e08e52d26fdd3a6c.mokky.dev/name"
+              method="post"
+            >
               <div class="contacts__input">
                 <input required name="name" id="name" type="text" />
                 <label for="name">Ваше имя</label>
@@ -783,7 +788,9 @@
                 <label for="text">Ваше сообщение</label>
               </div>
               <div class="contacts__triggers">
-                <button class="contacts__btn btn">Отправить сообщение</button>
+                <button type="submit" class="contacts__btn btn">
+                  Отправить сообщение
+                </button>
                 <div class="contacts__policy">
                   <input required type="checkbox" />
                   <span
@@ -795,6 +802,7 @@
                 </div>
               </div>
             </form>
+            <div id="successMessage">Форма успешно отправлена!</div>
           </div>
         </div>
         <a class="scroll-to-top" id="scrollToTopBtn">

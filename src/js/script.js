@@ -39,3 +39,15 @@ scrollToTopBtn.addEventListener("click", function () {
     behavior: "smooth", // Плавная прокрутка
   });
 });
+
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Предотвращаем стандартное поведение формы
+
+    // Показываем сообщение об успешной отправке
+    document.getElementById("successMessage").style.display = "block";
+
+    // Очищаем форму
+    this.reset();
+  });
