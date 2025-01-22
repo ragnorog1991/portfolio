@@ -17,10 +17,9 @@ counters.forEach((item, i) => {
   lines[i].style.width = item.innerHTML;
 });
 
-// Получаем кнопку
+// кнопка для прокрутки вверх
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-// Показываем кнопку при прокрутке вниз
 window.onscroll = function () {
   if (
     document.body.scrollTop > 100 ||
@@ -36,18 +35,41 @@ window.onscroll = function () {
 scrollToTopBtn.addEventListener("click", function () {
   window.scrollTo({
     top: 0,
-    behavior: "smooth", // Плавная прокрутка
+    behavior: "smooth",
   });
 });
 
+//код для отправки данных на сервер в JSON формате
 document
   .getElementById("contactForm")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Предотвращаем стандартное поведение формы
+    event.preventDefault();
 
-    // Показываем сообщение об успешной отправке
-    document.getElementById("successMessage").style.display = "block";
+    const formData = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      text: document.getElementById("text").value,
+    };
 
-    // Очищаем форму
-    this.reset();
+    fetch(this.action, {
+      method: this.method,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => {
+        if (response.ok) {
+          // Показываем сообщение об успешной отправке
+          document.getElementById("successMessage").style.display = "block";
+          // Очищаем форму (по желанию)
+          this.reset();
+        } else {
+          // Обработка ошибок
+          console.error("Ошибка при отправке формы");
+        }
+      })
+      .catch((error) => {
+        console.error("Ошибка:", error);
+      });
   });
